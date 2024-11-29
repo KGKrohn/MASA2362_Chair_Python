@@ -3,7 +3,7 @@ import numpy as np
 
 from utils import *
 
-data = load_csv("sit.csv")
+data = load_csv("Old_data/sit.csv")
 
 spike_threshold = 10
 min_sensors_trig = 3

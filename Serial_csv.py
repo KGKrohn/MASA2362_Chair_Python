@@ -8,7 +8,7 @@ import time
 serial_port = ('COM5')  # Change to your port, e.g., 'COM3' for Windows
 baud_rate = 9600              # Set the baud rate to match the device
 
-filename = "sit_down_4.csv"
+filename = "Old_data/sit_down_4.csv"
 
 try:
     # Open the serial port
