@@ -1,5 +1,5 @@
 
-data = readtable('back.csv');
+data = readtable('sit_down_4.csv');
 b1 = data.Var1;
 b2 = data.Var2;
 b3 = data.Var3;
@@ -15,27 +15,38 @@ s5 = data.Var12;
 s6 = data.Var13;
 s7 = data.Var14;
 s8 = data.Var15;
-
-plot(s1);hold on
+D1 = data.Var16;
+%%
+const = 10;
+plot(smoothdata(s1,"gaussian",const));hold on
 title('Seat')
-plot(s2)
-plot(s3)
-plot(s4)
-plot(s5)
-plot(s6)
-plot(s7)
-plot(s8)
+plot(smoothdata(s2,"gaussian",const))
+plot(smoothdata(s3,"gaussian",const))
+plot(smoothdata(s4,"gaussian",const))
+plot(smoothdata(s5,"gaussian",const))
+plot(smoothdata(s6,"gaussian",const))
+plot(smoothdata(s7,"gaussian",const))
+plot(smoothdata(s8,"gaussian",const))
+plot(D1*800)
 hold off
-legend('s1','s2','s3','s4','s5','s6','s7','s8')
+ylim([500,950])
+legend('s1','s2','s3','s4','s5','s6','s7','s8','D1')
 figure()
 
-plot(b1);hold on
+plot(smoothdata(b1,"gaussian",const));hold on
 title('Back')
-plot(b2)
-plot(b3)
-plot(b4)
-plot(b5)
-plot(b6)
-plot(b7)
+plot(smoothdata(b2,"gaussian",const))
+plot(smoothdata(b3,"gaussian",const))
+plot(smoothdata(b4,"gaussian",const))
+plot(smoothdata(b5,"gaussian",const))
+plot(smoothdata(b6,"gaussian",const))
+plot(smoothdata(b7,"gaussian",const))
+plot(D1*800)
 hold off
-legend('b1','b2','b3','b4','b5','b6','b7','b8')
+ylim([480,660])
+legend('b1','b2','b3','b4','b5','b6','b7','D1')
+%%
+
+%plot(smoothdata(b1,"gaussian",const));hold on
+%plot(smoothdata(s1,"gaussian",const))
+%hold off
