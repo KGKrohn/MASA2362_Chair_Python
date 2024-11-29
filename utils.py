@@ -3,10 +3,10 @@ import matplotlib.pyplot as plt
 
 def load_csv(file_path):
     try:
-        data = pd.read_csv(file_path)
+        data = pd.read_csv(file_path, header=None)
 
         # Drop the last two columns
-        data = data.iloc[:, :-2]
+        data = data.iloc[:, :-1]
 
         print("Loaded data successfully")
         return data
